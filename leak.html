@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Referrer Leak Demo</title></head>
+<body>
+  <h1>🧪 CSRF Token Leak PoC</h1>
+  <pre id="output">Waiting for referrer...</pre>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const ref = document.referrer;
+      document.getElementById("output").textContent = ref ? `Referrer: ${ref}` : "No referrer detected.";
+    });
+  </script>
+</body>
+</html>
